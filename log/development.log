@@ -1,0 +1,207 @@
+  [1m[35m (26.4ms)[0m  [1m[35mCREATE DATABASE `grupal1v2_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE DATABASE `grupal1v2_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (46.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (23.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('2708868579257998185', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateNewspapers (20220916020206)
+  [1m[35m (23.2ms)[0m  [1m[35mCREATE TABLE `newspapers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `encabezado` varchar(255), `cuerpo` varchar(255), `link` varchar(255), `tipo` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220916020206')[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2022-09-16 02:05:18.299094', '2022-09-16 02:05:18.299094')[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('2708868579257998185')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-09-15 23:05:37 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by NewspapersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/new.html.erb within layouts/application
+  Rendered newspapers/_form.html.erb (Duration: 67.2ms | Allocations: 6029)
+  Rendered newspapers/new.html.erb within layouts/application (Duration: 72.5ms | Allocations: 6753)
+  Rendered layout layouts/application.html.erb (Duration: 528.4ms | Allocations: 81691)
+Completed 500 Internal Server Error in 602ms (ActiveRecord: 2.9ms | Allocations: 92050)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (D:/M8/grupal1v2/tmp/cache/assets/sprockets/v4.0.0/vY/vYXLTISEzI8padbGB5WOBKxfSFqC7h98LVRTW6xStA8.cache.22000.1372.562594, D:/M8/grupal1v2/tmp/cache/assets/sprockets/v4.0.0/vY/vYXLTISEzI8padbGB5WOBKxfSFqC7h98LVRTW6xStA8.cache)):
+  
+sprockets (4.1.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.1.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.1.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.1.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.1.1) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.1.1) lib/sprockets/loader.rb:263:in `store_asset'
+sprockets (4.1.1) lib/sprockets/loader.rb:226:in `load_from_unloaded'
+sprockets (4.1.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.1.1) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.1.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.1.1) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.1.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.1.1) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.1.1) lib/sprockets/bundle.rb:32:in `block in call'
+C:/Ruby31-x64/lib/ruby/3.1.0/set.rb:511:in `each_key'
+C:/Ruby31-x64/lib/ruby/3.1.0/set.rb:511:in `each'
+sprockets (4.1.1) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.1.1) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.1.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.1.1) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.1.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.1.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2022-09-15 23:08:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by NewspapersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/new.html.erb within layouts/application
+  Rendered newspapers/_form.html.erb (Duration: 36.4ms | Allocations: 4259)
+  Rendered newspapers/new.html.erb within layouts/application (Duration: 39.7ms | Allocations: 4856)
+  Rendered layout layouts/application.html.erb (Duration: 129.7ms | Allocations: 28904)
+Completed 200 OK in 166ms (Views: 137.5ms | ActiveRecord: 4.0ms | Allocations: 37815)
+
+
+Started GET "/newspapers" for 127.0.0.1 at 2022-09-15 23:09:06 -0300
+Processing by NewspapersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/index.html.erb within layouts/application
+  [1m[36mNewspaper Load (0.3ms)[0m  [1m[34mSELECT `newspapers`.* FROM `newspapers`[0m
+  ↳ app/views/newspapers/index.html.erb:6
+  Rendered newspapers/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1339)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2481)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 2992)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-18 22:30:45 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (11.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by NewspapersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/new.html.erb within layouts/application
+  Rendered newspapers/_form.html.erb (Duration: 81.7ms | Allocations: 4216)
+  Rendered newspapers/new.html.erb within layouts/application (Duration: 95.6ms | Allocations: 4813)
+  Rendered layout layouts/application.html.erb (Duration: 424.0ms | Allocations: 26860)
+Completed 200 OK in 530ms (Views: 441.2ms | ActiveRecord: 4.7ms | Allocations: 35769)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-26 21:32:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (38.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by NewspapersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/new.html.erb within layouts/application
+  Rendered newspapers/_form.html.erb (Duration: 253.6ms | Allocations: 4198)
+  Rendered newspapers/new.html.erb within layouts/application (Duration: 307.4ms | Allocations: 4795)
+  Rendered layout layouts/application.html.erb (Duration: 874.5ms | Allocations: 26863)
+Completed 200 OK in 1008ms (Views: 902.9ms | ActiveRecord: 12.7ms | Allocations: 35774)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-26 21:45:33 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by NewspapersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/new.html.erb within layouts/application
+  Rendered newspapers/_form.html.erb (Duration: 34.9ms | Allocations: 4316)
+  Rendered newspapers/new.html.erb within layouts/application (Duration: 37.9ms | Allocations: 4913)
+  Rendered layout layouts/application.html.erb (Duration: 133.3ms | Allocations: 27038)
+Completed 200 OK in 185ms (Views: 143.7ms | ActiveRecord: 3.0ms | Allocations: 35950)
+
+
+Started GET "/newspapers" for 127.0.0.1 at 2022-09-26 21:49:29 -0300
+Processing by NewspapersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/index.html.erb within layouts/application
+  [1m[36mNewspaper Load (133.3ms)[0m  [1m[34mSELECT `newspapers`.* FROM `newspapers`[0m
+  ↳ app/views/newspapers/index.html.erb:6
+  Rendered newspapers/index.html.erb within layouts/application (Duration: 137.7ms | Allocations: 1324)
+  Rendered layout layouts/application.html.erb (Duration: 145.3ms | Allocations: 2687)
+Completed 200 OK in 156ms (Views: 17.6ms | ActiveRecord: 133.3ms | Allocations: 3632)
+
+
+Started GET "/newspapers/new" for 127.0.0.1 at 2022-09-26 21:49:31 -0300
+Processing by NewspapersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/new.html.erb within layouts/application
+  Rendered newspapers/_form.html.erb (Duration: 25.8ms | Allocations: 2008)
+  Rendered newspapers/new.html.erb within layouts/application (Duration: 28.7ms | Allocations: 2274)
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 3312)
+Completed 200 OK in 50ms (Views: 39.6ms | ActiveRecord: 0.0ms | Allocations: 3686)
+
+
+Started GET "/newspapers" for 127.0.0.1 at 2022-09-26 21:49:33 -0300
+Processing by NewspapersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/index.html.erb within layouts/application
+  [1m[36mNewspaper Load (0.6ms)[0m  [1m[34mSELECT `newspapers`.* FROM `newspapers`[0m
+  ↳ app/views/newspapers/index.html.erb:6
+  Rendered newspapers/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 852)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 1890)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.6ms | Allocations: 2178)
+
+
+Started GET "/newspapers/new" for 127.0.0.1 at 2022-09-26 21:49:35 -0300
+Processing by NewspapersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/new.html.erb within layouts/application
+  Rendered newspapers/_form.html.erb (Duration: 1.6ms | Allocations: 1512)
+  Rendered newspapers/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1599)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 2635)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 2917)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-27 00:15:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (10.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by NewspapersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/new.html.erb within layouts/application
+  Rendered newspapers/_form.html.erb (Duration: 44.6ms | Allocations: 4304)
+  Rendered newspapers/new.html.erb within layouts/application (Duration: 53.5ms | Allocations: 4901)
+  Rendered layout layouts/application.html.erb (Duration: 128.1ms | Allocations: 27025)
+Completed 200 OK in 218ms (Views: 152.0ms | ActiveRecord: 17.0ms | Allocations: 35936)
+
+
+Started GET "/newspapers" for 127.0.0.1 at 2022-09-27 00:15:27 -0300
+Processing by NewspapersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering newspapers/index.html.erb within layouts/application
+  [1m[36mNewspaper Load (3.4ms)[0m  [1m[34mSELECT `newspapers`.* FROM `newspapers`[0m
+  ↳ app/views/newspapers/index.html.erb:6
+  Rendered newspapers/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1273)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 2415)
+Completed 200 OK in 23ms (Views: 18.0ms | ActiveRecord: 3.4ms | Allocations: 2926)
+
+
